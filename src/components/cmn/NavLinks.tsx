@@ -1,3 +1,5 @@
+import { withBase } from "@/utils/with-base";
+
 interface NavLinksProps {
   current: "before" | "after";
 }
@@ -6,7 +8,7 @@ export function NavLinks({ current }: NavLinksProps) {
   return (
     <nav className="flex gap-2 text-sm" aria-label="Before/After切り替え">
       <a
-        href="/compare/before"
+        href={withBase("compare/before")}
         className={`rounded px-3 py-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 ${
           current === "before"
             ? "bg-slate-900 text-white"
@@ -17,7 +19,7 @@ export function NavLinks({ current }: NavLinksProps) {
         Before（未対策版）
       </a>
       <a
-        href="/compare/after"
+        href={withBase("compare/after")}
         className={`rounded px-3 py-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 ${
           current === "after"
             ? "bg-slate-900 text-white"

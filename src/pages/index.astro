@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { withBase } from "@/utils/with-base";
 ---
 
 <BaseLayout title="MT一覧 Before/After比較">
@@ -11,13 +12,13 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     </p>
     <div class="flex gap-3">
       <a
-        href="/compare/before"
+        href={withBase("compare/before")}
         class="rounded bg-slate-900 px-4 py-2 text-sm font-medium text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
       >
         Before（未対策版）を見る
       </a>
       <a
-        href="/compare/after"
+        href={withBase("compare/after")}
         class="rounded border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
       >
         After（対策版）を見る

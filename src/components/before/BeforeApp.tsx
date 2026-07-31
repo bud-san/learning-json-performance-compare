@@ -17,11 +17,12 @@ import {
   navigateToFilterParams,
   readParamsFromLocationOrDefault,
 } from "@/utils/url-params";
+import { withBase } from "@/utils/with-base";
 import { applyFiltersSerial } from "./applyFiltersSerial";
 import { RecordList } from "./RecordList";
 import { RecordThumbnail } from "./RecordThumbnail";
 
-const DATA_URL = "/mock-mt-data/mt-export.json";
+const DATA_URL = withBase("mock-mt-data/mt-export.json");
 
 // 表示のたびにmoment()でisValid()を確認してからformat()する
 // （ネイティブのIntl.DateTimeFormatより重いが、素朴な実装を再現している）。

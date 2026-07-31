@@ -4,6 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
+  site: "https://bud-san.github.io",
+  base: "/learning-json-performance-compare",
   output: "static",
   integrations: [react()],
   vite: {

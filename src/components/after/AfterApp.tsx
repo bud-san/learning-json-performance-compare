@@ -19,12 +19,13 @@ import {
   navigateToFilterParams,
   readParamsFromLocationOrDefault,
 } from "@/utils/url-params";
+import { withBase } from "@/utils/with-base";
 import MtDataWorker from "@/workers/mt-data.worker?worker";
 import { RecordList } from "./RecordList";
 import { RecordThumbnail } from "./RecordThumbnail";
 import { SkeletonList } from "./SkeletonList";
 
-const DATA_URL = "/mock-mt-data/mt-export.json";
+const DATA_URL = withBase("mock-mt-data/mt-export.json");
 
 interface FilterResultState {
   items: MtRecord[];
