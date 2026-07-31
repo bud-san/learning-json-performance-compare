@@ -23,7 +23,7 @@ export function ConsentBanner() {
 
   return (
     <div className="flex h-12 items-center justify-center gap-3 bg-blue-600 px-4 text-center text-sm font-medium text-white">
-      <span>Cookieを使用しています。</span>
+      <span>同意状態をブラウザに保存します。</span>
       <button
         type="button"
         onClick={handleAccept}
