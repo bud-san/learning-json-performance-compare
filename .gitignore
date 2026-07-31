@@ -1,0 +1,21 @@
+# build output
+dist/
+docs/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+*.log
+
+# environment variables
+.env
+.env.production
+
+# macOS
+.DS_Store
+
+# Claude Code local session state
+.claude/scheduled_tasks.lock
+.predeploy-check.**

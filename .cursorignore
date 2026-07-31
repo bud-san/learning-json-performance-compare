@@ -1,0 +1,13 @@
+dist/
+public/assets/
+.env
+src/json/
+*.log
+**/logs
+node_modules/
+.astro/
+*.lock
+service_account.json
+src/__test__/e2e/target-urls.json
+playwright-report/
+test-results/

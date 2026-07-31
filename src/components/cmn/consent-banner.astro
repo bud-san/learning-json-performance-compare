@@ -1,0 +1,37 @@
+<div
+  id="consent-banner"
+  class="flex h-12 items-center justify-center gap-3 bg-blue-600 px-4 text-center text-sm font-medium text-white"
+>
+  <span>Cookieを使用しています。</span>
+  <button
+    type="button"
+    id="consent-banner-accept"
+    class="rounded bg-white/20 px-2 py-1 text-xs hover:bg-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+  >
+    同意する
+  </button>
+</div>
+
+<script is:inline>
+  // After: is:inlineによりHTMLパース中に同期実行される（type="module"のscriptは
+  // 仕様上必ずdeferされ、パース完了後まで実行されないため、素朴な実装と同じくレイアウトが
+  // 一度確定してしまいガクツキを防げない）。Reactのhydrationも待たず、DOM構築中に
+  // localStorageを判定して同意済みなら要素をフローから取り除くため、ガクツキが起きない。
+  (() => {
+    const CONSENT_STORAGE_KEY = "consent-ack";
+    const banner = document.getElementById("consent-banner");
+    if (!banner) return;
+
+    if (window.localStorage.getItem(CONSENT_STORAGE_KEY) === "1") {
+      banner.remove();
+      return;
+    }
+
+    banner
+      .querySelector("#consent-banner-accept")
+      ?.addEventListener("click", () => {
+        window.localStorage.setItem(CONSENT_STORAGE_KEY, "1");
+        banner.remove();
+      });
+  })();
+</script>

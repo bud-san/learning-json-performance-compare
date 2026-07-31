@@ -1,0 +1,12 @@
+---
+// After: 同意バナーはドキュメントフロー上のブロック要素として表示し、DOM構築直後の同期scriptで
+// 判定してから削除するため、Reactのhydrationを待つ素朴な実装と違いガクツキが起きない。
+import { AfterApp } from "@/components/after/AfterApp";
+import ConsentBanner from "@/components/cmn/consent-banner.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="After: 対策版 | MT一覧比較">
+  <ConsentBanner />
+  <AfterApp client:idle />
+</BaseLayout>

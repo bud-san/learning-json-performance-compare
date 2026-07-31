@@ -1,0 +1,27 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="MT一覧 Before/After比較">
+  <main class="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-16">
+    <h1 class="text-2xl font-bold text-slate-900">巨大JSON一覧 Before/After比較</h1>
+    <p class="text-sm text-slate-600">
+      巨大JSON（数万件規模）をクライアントサイドで検索・ページネーション表示する場面を想定し、
+      未対策版（Before）と対策版（After）を同じダミーデータ・同じUIで比較できます。
+    </p>
+    <div class="flex gap-3">
+      <a
+        href="/compare/before"
+        class="rounded bg-slate-900 px-4 py-2 text-sm font-medium text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+      >
+        Before（未対策版）を見る
+      </a>
+      <a
+        href="/compare/after"
+        class="rounded border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+      >
+        After（対策版）を見る
+      </a>
+    </div>
+  </main>
+</BaseLayout>

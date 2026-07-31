@@ -1,0 +1,12 @@
+---
+import { BeforeApp } from "@/components/before/BeforeApp";
+// Before: 同意バナーはドキュメントフロー上のブロック要素として表示し、useEffect判定後に
+// DOMから削除する素朴な実装のため、JS実行前後でページ全体の高さが変わりガクツキが起きる。
+import { ConsentBanner } from "@/components/before/ConsentBanner";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Before: 未対策版 | MT一覧比較">
+  <ConsentBanner client:load />
+  <BeforeApp client:load />
+</BaseLayout>
